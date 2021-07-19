@@ -3,12 +3,20 @@ package com.example.udemy.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Categories implements Serializable {
 	private static final long serialVersionUID = 1L;
 	 
 //Ao Serializable impelementar Categorires os objetos delas podem convertido para uma sequência de bits
 //serve pra que os objetos possam ser gravados em arquivos e que possam trafegar me rede
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	
